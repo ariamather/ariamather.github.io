@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张伟 (Wei Zhang) - 个人主页</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* 使用 Inter 字体，并为深色模式优化 */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* 深灰色背景 */
+            color: #E5E7EB; /* 浅灰色文字 */
+        }
+        /* 动态打字效果的光标 */
+        .typing-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.2em;
+            background-color: #38bdf8; /* 天蓝色 */
+            animation: blink 0.7s infinite;
+            vertical-align: bottom;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        /* 滚动渐入动画 */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900/50 backdrop-blur-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-white">WZ.</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 hover:text-sky-400 transition-colors duration-300">关于我</a>
+                <a href="#projects" class="text-gray-300 hover:text-sky-400 transition-colors duration-300">项目</a>
+                <a href="#contact" class="text-gray-300 hover:text-sky-400 transition-colors duration-300">联系</a>
+            </nav>
+            <a href="path/to/your/resume.pdf" target="_blank" class="hidden md:block bg-sky-500 hover:bg-sky-600 text-white font-medium py-2 px-4 rounded-lg transition-transform duration-300 hover:scale-105">
+                下载简历
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex flex-col justify-center items-start text-left pt-20">
+            <div class="max-w-3xl">
+                <p class="text-lg text-sky-400 mb-2 font-medium">你好，我是</p>
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">张伟 (Wei Zhang)</h1>
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-400 mb-6">
+                    我是一名 <span id="dynamic-text" class="text-gray-300"></span><span class="typing-cursor"></span>
+                </h2>
+                <p class="text-lg text-gray-400 max-w-xl mb-8">
+                    一名对人工智能和全栈开发充满热情的计算机科学专业学生。我热衷于利用代码解决实际问题，并构建美观、高效的数字产品。
+                </p>
+                <div class="flex space-x-4">
+                    <a href="https://github.com/your-username" target="_blank" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-transform duration-300 hover:scale-105">
+                        GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/your-profile" target="_blank" class="border-2 border-sky-500 text-sky-500 hover:bg-sky-500 hover:text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105">
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20 reveal">
+            <h2 class="text-4xl font-bold text-white text-center mb-12">关于我</h2>
+            <div class="grid md:grid-cols-5 gap-10 items-center">
+                <div class="md:col-span-3 text-lg text-gray-400 space-y-4">
+                    <p>
+                        我目前就读于 <strong class="text-sky-400">XX大学</strong>，主修计算机科学与技术。我的学术兴趣主要集中在 <strong class="text-sky-400">机器学习</strong>、<strong class="text-sky-400">自然语言处理</strong> 和 <strong class="text-sky-400">现代Web开发</strong> 领域。
+                    </p>
+                    <p>
+                        在校期间，我积极参与各类项目，从构建预测模型到开发功能完善的全栈应用。我相信持续学习和动手实践是技术成长的最佳途径。
+                    </p>
+                    <p>
+                        业余时间，我喜欢阅读技术博客、为开源项目贡献代码，以及探索最新的前沿科技。
+                    </p>
+                </div>
+                <div class="md:col-span-2 flex justify-center">
+                    <img src="https://placehold.co/300x300/1F2937/E5E7EB?text=Your+Photo" alt="个人照片" class="rounded-full w-60 h-60 md:w-72 md:h-72 object-cover shadow-lg shadow-sky-900/20">
+                </div>
+            </div>
+            <div class="mt-16 text-center">
+                <h3 class="text-2xl font-bold text-white mb-6">我的技术栈</h3>
+                <div class="flex flex-wrap justify-center items-center gap-4">
+                    <!-- 建议替换为真实的SVG图标以获得更好效果 -->
+                    <span class="bg-gray-700 text-sky-300 text-sm font-medium px-4 py-2 rounded-full">Python</span>
+                    <span class="bg-gray-700 text-sky-300 text-sm font-medium px-4 py-2 rounded-full">JavaScript</span>
+                    <span class="bg-gray-700 text-sky-300 text-sm font-medium px-4 py-2 rounded-full">React</span>
+                    <span class="bg-gray-700 text-sky-300 text-sm font-medium px-4 py-2 rounded-full">Node.js</span>
+                    <span class="bg-gray-700 text-sky-300 text-sm font-medium px-4 py-2 rounded-full">TensorFlow</span>
+                    <span class="bg-gray-700 text-sky-300 text-sm font-medium px-4 py-2 rounded-full">Docker</span>
+                    <span class="bg-gray-700 text-sky-300 text-sm font-medium px-4 py-2 rounded-full">SQL</span>
+                    <span class="bg-gray-700 text-sky-300 text-sm font-medium px-4 py-2 rounded-full">Git</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 reveal">
+            <h2 class="text-4xl font-bold text-white text-center mb-12">精选项目</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">智能推荐系统</h3>
+                        <p class="text-gray-400 mb-4">一个基于协同过滤算法的电影推荐引擎，能够根据用户历史评分进行个性化推荐。</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-sky-900/50 text-sky-300 px-2 py-1 rounded-full">Python</span>
+                            <span class="text-xs bg-sky-900/50 text-sky-300 px-2 py-1 rounded-full">Flask</span>
+                            <span class="text-xs bg-sky-900/50 text-sky-300 px-2 py-1 rounded-full">Pandas</span>
+                        </div>
+                        <div class="flex justify-end space-x-4">
+                            <a href="#" class="text-sky-400 hover:text-sky-300 transition-colors">Live Demo</a>
+                            <a href="#" class="text-sky-400 hover:text-sky-300 transition-colors">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">在线协作白板</h3>
+                        <p class="text-gray-400 mb-4">一个实时的在线协作白板应用，支持多人同时绘制、文字输入和交流。</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-sky-900/50 text-sky-300 px-2 py-1 rounded-full">React</span>
+                            <span class="text-xs bg-sky-900/50 text-sky-300 px-2 py-1 rounded-full">Node.js</span>
+                            <span class="text-xs bg-sky-900/50 text-sky-300 px-2 py-1 rounded-full">WebSocket</span>
+                        </div>
+                        <div class="flex justify-end space-x-4">
+                            <a href="#" class="text-sky-400 hover:text-sky-300 transition-colors">Live Demo</a>
+                            <a href="#" class="text-sky-400 hover:text-sky-300 transition-colors">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">个人博客平台</h3>
+                        <p class="text-gray-400 mb-4">一个使用静态网站生成器搭建的个人博客，用于记录技术学习笔记和分享心得。</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-sky-900/50 text-sky-300 px-2 py-1 rounded-full">Next.js</span>
+                            <span class="text-xs bg-sky-900/50 text-sky-300 px-2 py-1 rounded-full">Markdown</span>
+                            <span class="text-xs bg-sky-900/50 text-sky-300 px-2 py-1 rounded-full">Tailwind CSS</span>
+                        </div>
+                        <div class="flex justify-end space-x-4">
+                            <a href="#" class="text-sky-400 hover:text-sky-300 transition-colors">Live Demo</a>
+                            <a href="#" class="text-sky-400 hover:text-sky-300 transition-colors">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 text-center reveal">
+            <h2 class="text-4xl font-bold text-white mb-4">保持联系</h2>
+            <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+                我一直在寻找新的机会和挑战。如果你有任何问题，或者只是想打个招呼，随时欢迎与我联系！
+            </p>
+            <a href="mailto:your.email@example.com" class="inline-block bg-sky-500 hover:bg-sky-600 text-white font-bold text-lg py-4 px-8 rounded-lg transition-transform duration-300 hover:scale-105">
+                发送邮件
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800">
+        <div class="container mx-auto px-6 py-6 text-center text-gray-500">
+            <p>&copy; 2025 张伟 (Wei Zhang). All Rights Reserved.</p>
+            <p class="text-sm mt-2">Designed & Built with ❤️</p>
+        </div>
+    </footer>
+
+    <script>
+        // 动态打字效果
+        const dynamicText = document.getElementById('dynamic-text');
+        const phrases = ['软件开发者', 'AI爱好者', '全栈工程师', '问题解决者'];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            if (isDeleting) {
+                dynamicText.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                dynamicText.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 100 : 200;
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typeSpeed = 2000; // Pause at end of word
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 500; // Pause before new word
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        // 滚动渐入效果
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // 可选：一旦可见就停止观察，以提高性能
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1 // 元素进入视口10%时触发
+        });
+
+        revealElements.forEach(el => {
+            observer.observe(el);
+        });
+
+        // 页面加载后启动
+        document.addEventListener('DOMContentLoaded', type);
+    </script>
+</body>
+</html>
