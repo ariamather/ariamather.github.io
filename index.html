@@ -1,227 +1,117 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="scroll-smooth">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>陈俊宇 - 个人主页</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* 使用 Inter 字体，并为深色模式优化 */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #111827; /* 深灰色背景 */
-            color: #E5E7EB; /* 浅灰色文字 */
+            font-family: "Georgia", "Noto Serif SC", serif;
+            background-color: #f5f2ef;
+            color: #4a4543;
+            line-height: 1.8;
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 60px 24px;
         }
-        /* 动态打字效果的光标 */
-        .typing-cursor {
-            display: inline-block;
-            width: 2px;
-            height: 1.2em;
-            background-color: #38bdf8; /* 天蓝色 */
-            animation: blink 0.7s infinite;
-            vertical-align: bottom;
+        a { color: #7d6b5d; text-decoration: none; border-bottom: 1px solid #c4b8ae; }
+        a:hover { color: #5c4f44; border-bottom-color: #7d6b5d; }
+        h1 { font-size: 1.8rem; color: #3d3835; margin-bottom: 4px; font-weight: 600; }
+        h2 {
+            font-size: 1.1rem; color: #7d6b5d; margin-top: 48px; margin-bottom: 16px;
+            padding-bottom: 6px; border-bottom: 1px solid #ddd5ce;
+            font-weight: 500; letter-spacing: 0.5px;
         }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+        .subtitle { font-size: 1rem; color: #8a7e76; margin-bottom: 24px; }
+        .intro { font-size: 0.95rem; color: #5c5450; margin-bottom: 12px; }
+        .section { margin-bottom: 36px; }
+        .edu-item { margin-bottom: 14px; }
+        .edu-item .school { font-weight: 600; color: #3d3835; }
+        .edu-item .detail { font-size: 0.9rem; color: #8a7e76; }
+        .interests { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag {
+            background-color: #e8e2dc;
+            color: #5c4f44; padding: 4px 12px;
+            border-radius: 3px; font-size: 0.85rem;
         }
-        /* 滚动渐入动画 */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .paper-item { margin-bottom: 14px; }
+        .paper-item .title { font-weight: 500; color: #3d3835; }
+        .paper-item .authors { font-size: 0.9rem; color: #8a7e76; }
+        .paper-item .venue { font-size: 0.85rem; color: #a89e96; font-style: italic; }
+        .contact-list { list-style: none; font-size: 0.95rem; }
+        .contact-list li { margin-bottom: 8px; }
+        .contact-list .label { color: #8a7e76; display: inline-block; width: 80px; }
+        footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #ddd5ce;
+            font-size: 0.8rem; color: #a89e96; text-align: center; }
+        .header-row { display: flex; align-items: center; gap: 24px; }
+        .photo { width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+            border: 3px solid #ddd5ce; flex-shrink: 0; }
+        @media (max-width: 600px) {
+            body { padding: 36px 16px; }
+            h1 { font-size: 1.5rem; }
+            .header-row { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
-<body class="antialiased">
-
-    <!-- Header / Navigation Bar -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900/50 backdrop-blur-lg">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-white">WZ.</a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#about" class="text-gray-300 hover:text-sky-400 transition-colors duration-300">关于我</a>
-                <a href="#projects" class="text-gray-300 hover:text-sky-400 transition-colors duration-300">项目</a>
-                <a href="#contact" class="text-gray-300 hover:text-sky-400 transition-colors duration-300">联系</a>
-            </nav>
-            <a href="resume.pdf" target="_blank" class="hidden md:block bg-sky-500 hover:bg-sky-600 text-white font-medium py-2 px-4 rounded-lg transition-transform duration-300 hover:scale-105">
-                下载简历
-            </a>
+<body>
+    <header>
+        <div class="header-row">
+            <img src="photo.jpg" alt="陈俊宇" class="photo">
+            <div>
+                <h1>陈俊宇 Chen Junyu</h1>
+                <p class="subtitle">中山大学 · 系统科学与工程学院 · 信息工程实验班</p>
+                <p class="intro" style="margin-top: 12px;">
+                    本科大三在读，即将攻读硕士。研究兴趣集中在3D视觉、多模态学习与具身智能方向。
+                    <br><a href="resume.pdf" style="font-size: 0.9rem;">下载简历 (PDF)</a>
+                </p>
+            </div>
         </div>
     </header>
 
-    <main class="container mx-auto px-6">
-        <!-- Hero Section -->
-        <section id="home" class="min-h-screen flex flex-col justify-center items-start text-left pt-20">
-            <div class="max-w-3xl">
-                <p class="text-lg text-sky-400 mb-2 font-medium">你好，我是</p>
-                <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">陈俊宇 (Chen Junyu)</h1>
-                <h2 class="text-3xl md:text-5xl font-bold text-gray-400 mb-6">
-                    我是一名 <span id="dynamic-text" class="text-gray-300"></span><span class="typing-cursor"></span>
-                </h2>
-                <p class="text-lg text-gray-400 max-w-xl mb-8">
-                    一名对人工智能和全栈开发充满热情的信息工程专业学生。
-                </p>
-                <div class="flex space-x-4">
-                    <a href="https://github.com/ariamather" target="_blank" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-transform duration-300 hover:scale-105">
-                        GitHub
-                    </a>
-                    <a href="https://bilibili.com" target="_blank" class="border-2 border-sky-500 text-sky-500 hover:bg-sky-500 hover:text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105">
-                        Bilibili
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Me Section -->
-        <section id="about" class="py-20 reveal">
-            <h2 class="text-4xl font-bold text-white text-center mb-12">关于我</h2>
-            <div class="grid md:grid-cols-5 gap-10 items-center">
-                <div class="md:col-span-3 text-lg text-gray-400 space-y-4">
-                    <p>
-                        我目前就读于 <strong class="text-sky-400">中山大学</strong>，主修信息工程。我的学术兴趣主要集中在 <strong class="text-sky-400">机器学习</strong>、<strong class="text-sky-400">数据挖掘</strong> 和 <strong class="text-sky-400">自然语言处理</strong> 领域。
-                    </p>
-                    <p>
-                        在校期间，我积极参与各类项目，从构建预测模型到开发功能完善的全栈应用。我相信持续学习和动手实践是技术成长的最佳途径。
-                    </p>
-                    <p>
-                        业余时间，我喜欢阅读技术博客、为开源项目贡献代码，以及探索最新的前沿科技。
-                    </p>
-                </div>
-                <div class="md:col-span-2 flex justify-center">
-                    <img src="https://placehold.co/300x300/1F2937/E5E7EB?text=Your+Photo" alt="个人照片" class="rounded-full w-60 h-60 md:w-72 md:h-72 object-cover shadow-lg shadow-sky-900/20">
-                </div>
-            </div>
-            <div class="mt-16 text-center">
-                <h3 class="text-2xl font-bold text-white mb-6">我的技术栈</h3>
-                <div class="flex flex-wrap justify-center items-center gap-4">
-                    <!-- 建议替换为真实的SVG图标以获得更好效果 -->
-                    <span class="bg-gray-700 text-sky-300 text-sm font-medium px-4 py-2 rounded-full">Python</span>
-                    <span class="bg-gray-700 text-sky-300 text-sm font-medium px-4 py-2 rounded-full">Pytorch</span>
-                    <span class="bg-gray-700 text-sky-300 text-sm font-medium px-4 py-2 rounded-full">C</span>
-                    <span class="bg-gray-700 text-sky-300 text-sm font-medium px-4 py-2 rounded-full">Git</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="py-20 reveal">
-            <h2 class="text-4xl font-bold text-white text-center mb-12">玩过的小项目</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project Card 1 -->
-                <div class="bg-gray-800 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-white mb-2">用Alphazero下五子棋</h3>
-                        <p class="text-gray-400 mb-4">一个基于MCTS和DNN算法的五子棋AI，能够与人类玩家进行对战。</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs bg-sky-900/50 text-sky-300 px-2 py-1 rounded-full">Python</span>
-                            <span class="text-xs bg-sky-900/50 text-sky-300 px-2 py-1 rounded-full">Flask</span>
-                            <span class="text-xs bg-sky-900/50 text-sky-300 px-2 py-1 rounded-full">Pandas</span>
-                        </div>
-                        <div class="flex justify-end space-x-4">
-                            <a href="#" class="text-sky-400 hover:text-sky-300 transition-colors">Live Demo</a>
-                            <a href="#" class="text-sky-400 hover:text-sky-300 transition-colors">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project Card 3 -->
-                <div class="bg-gray-800 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-white mb-2">个人博客平台</h3>
-                        <p class="text-gray-400 mb-4">一个使用静态网站生成器搭建的个人博客，用于记录技术学习笔记和分享心得。</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs bg-sky-900/50 text-sky-300 px-2 py-1 rounded-full">Next.js</span>
-                            <span class="text-xs bg-sky-900/50 text-sky-300 px-2 py-1 rounded-full">Markdown</span>
-                            <span class="text-xs bg-sky-900/50 text-sky-300 px-2 py-1 rounded-full">Tailwind CSS</span>
-                        </div>
-                        <div class="flex justify-end space-x-4">
-                            <a href="#" class="text-sky-400 hover:text-sky-300 transition-colors">Live Demo</a>
-                            <a href="#" class="text-sky-400 hover:text-sky-300 transition-colors">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 text-center reveal">
-            <h2 class="text-4xl font-bold text-white mb-4">保持联系</h2>
-            <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-                我一直在寻找新的机会和挑战。如果你有任何问题，或者只是想打个招呼，随时欢迎与我联系！
-            </p>
-            <a href="mailto:chenjy865@mail2.sysu.edu.cn" class="inline-block bg-sky-500 hover:bg-sky-600 text-white font-bold text-lg py-4 px-8 rounded-lg transition-transform duration-300 hover:scale-105">
-                发送邮件
-            </a>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t border-gray-800">
-        <div class="container mx-auto px-6 py-6 text-center text-gray-500">
-            <p>&copy; 2025 陈俊宇 (Chen Junyu). All Rights Reserved.</p>
-            <p class="text-sm mt-2">Designed & Built with ❤️</p>
+    <h2>教育背景</h2>
+    <div class="section">
+        <div class="edu-item">
+            <p class="school">中山大学 — 硕士（即将入学）</p>
+            <p class="detail">系统科学与工程学院 · 2025.09 -</p>
         </div>
+        <div class="edu-item">
+            <p class="school">中山大学 — 本科</p>
+            <p class="detail">系统科学与工程学院 · "优中选优"信息工程实验班 · 2022.09 - 2026.06</p>
+            <p class="detail">排名 3/30 · GPA 4.02/5.00</p>
+        </div>
+    </div>
+
+    <h2>研究兴趣</h2>
+    <div class="section">
+        <div class="interests">
+            <span class="tag">3D Vision</span>
+            <span class="tag">Affordance Learning</span>
+            <span class="tag">多模态学习</span>
+            <span class="tag">具身智能</span>
+        </div>
+    </div>
+
+    <h2>论文</h2>
+    <div class="section">
+        <div class="paper-item">
+            <p class="title">Diffusion-Guided 3D Affordance Learning for Semantic Enhancement</p>
+            <p class="authors"><strong>陈俊宇</strong>, et al.</p>
+            <p class="venue">BMVC 2026 (Under Review)</p>
+        </div>
+    </div>
+
+    <h2>联系方式</h2>
+    <div class="section">
+        <ul class="contact-list">
+            <li><span class="label">邮箱</span><a href="mailto:chenjy865@mail2.sysu.edu.cn">chenjy865@mail2.sysu.edu.cn</a></li>
+            <li><span class="label">GitHub</span><a href="https://github.com/ariamather">github.com/ariamather</a></li>
+            <li><span class="label">简历</span><a href="resume.pdf">PDF 下载</a></li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 陈俊宇</p>
     </footer>
-
-    <script>
-        // 动态打字效果
-        const dynamicText = document.getElementById('dynamic-text');
-        const phrases = ['软件开发者', 'AI爱好者', '全栈工程师', '问题解决者'];
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        function type() {
-            const currentPhrase = phrases[phraseIndex];
-            if (isDeleting) {
-                dynamicText.textContent = currentPhrase.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                dynamicText.textContent = currentPhrase.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            let typeSpeed = isDeleting ? 100 : 200;
-
-            if (!isDeleting && charIndex === currentPhrase.length) {
-                typeSpeed = 2000; // Pause at end of word
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-                typeSpeed = 500; // Pause before new word
-            }
-
-            setTimeout(type, typeSpeed);
-        }
-
-        // 滚动渐入效果
-        const revealElements = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    // 可选：一旦可见就停止观察，以提高性能
-                    // observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1 // 元素进入视口10%时触发
-        });
-
-        revealElements.forEach(el => {
-            observer.observe(el);
-        });
-
-        // 页面加载后启动
-        document.addEventListener('DOMContentLoaded', type);
-    </script>
 </body>
 </html>
